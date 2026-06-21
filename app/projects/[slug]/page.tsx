@@ -1,26 +1,49 @@
 import Image from "next/image";
 import Link from "next/link";
+import ProjectGallery from "@/components/ProjectGallery";
+
 
 const projects = {
   "sistem-penjualan": {
     title: "Sistem Penjualan Berbasis Web",
-    description:
-      "Sistem penjualan berbasis web yang dikembangkan untuk membantu proses pengelolaan order, pengiriman, invoice, dan laporan penjualan secara lebih efektif dan terintegrasi.",
+    description: "Sistem penjualan berbasis web yang dikembangkan untuk membantu proses pengelolaan order, pengiriman, invoice, dan laporan penjualan secara lebih efektif dan terintegrasi.",
     tech: ["PHP", "Laravel", "MySQL", "JavaScript"],
+
+    images: [
+      "/images/hendi.png",
+      "/images/hendi.png",
+      "/images/hendi.png",
+    ],
   },
 
   "website-portfolio": {
     title: "Website Portfolio",
+
     description:
       "Website portfolio pribadi yang dibuat menggunakan Next.js untuk menampilkan profil, skill, pengalaman, dan project yang pernah dikerjakan.",
+
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+
+    images: [
+      "/images/hendi.png",
+      "/images/hendi.png",
+      "/images/hendi.png",
+    ],
   },
 
   "sistem-inventory": {
     title: "Sistem Inventory",
+
     description:
       "Aplikasi inventory untuk membantu pencatatan stok barang masuk dan keluar serta mempermudah monitoring persediaan.",
+
     tech: ["PHP", "MySQL", "Bootstrap"],
+
+    images: [
+      "/images/hendi.png",
+      "/images/hendi.png",
+      "/images/hendi.png",
+    ],
   },
 };
 
@@ -42,7 +65,7 @@ export default async function ProjectDetail({
     <main className="max-w-6xl mx-auto px-6 py-20">
 
       <Link
-        href="/"
+        href="/#projects"
         className="text-sky-600 hover:underline"
       >
         ← Kembali
@@ -73,12 +96,9 @@ export default async function ProjectDetail({
 
         {/* Kanan */}
         <div>
-          <Image
-            src="/images/hendi.png"
-            alt={project.title}
-            width={700}
-            height={450}
-            className="rounded-xl shadow-lg"
+          <ProjectGallery
+            images={project.images}
+            title={project.title}
           />
         </div>
 

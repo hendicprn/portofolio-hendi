@@ -23,7 +23,9 @@ export default function Hero() {
 
           <div className="flex gap-4">
             <button className="bg-[#0F172A] text-white px-6 py-3 rounded-lg hover:bg-slate-800 transition shadow-md">
+              <a href="#projects">
               Lihat Project
+              </a>
             </button>
 
             <button className="border-2 border-[#0F172A] text-[#0F172A] px-6 py-3 rounded-lg hover:bg-[#0F172A] hover:text-white transition">
