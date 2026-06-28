@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center"
+      className="min-h-screen flex items-center bg-slate-50"
     >
       <div className="max-w-6xl mx-auto px-6 w-full">
 

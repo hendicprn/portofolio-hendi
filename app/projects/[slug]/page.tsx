@@ -1,18 +1,19 @@
-import Image from "next/image";
 import Link from "next/link";
 import ProjectGallery from "@/components/ProjectGallery";
-
 
 const projects = {
   "sistem-penjualan": {
     title: "Sistem Penjualan Berbasis Web",
-    description: "Sistem penjualan berbasis web yang dikembangkan untuk membantu proses pengelolaan order, pengiriman, invoice, dan laporan penjualan secara lebih efektif dan terintegrasi.",
+
+    description:
+      "Sistem penjualan berbasis web yang dikembangkan untuk membantu proses pengelolaan order, pengiriman, invoice, dan laporan penjualan secara lebih efektif dan terintegrasi.",
+
     tech: ["PHP", "Laravel", "MySQL", "JavaScript"],
 
     images: [
       "/images/hendi.png",
-      "/images/hendi.png",
-      "/images/hendi.png",
+      "/images/hendi2.png",
+      "/images/hendi3.png",
     ],
   },
 
@@ -26,8 +27,8 @@ const projects = {
 
     images: [
       "/images/hendi.png",
-      "/images/hendi.png",
-      "/images/hendi.png",
+      "/images/hendi2.png",
+      "/images/hendi3.png",
     ],
   },
 
@@ -41,8 +42,8 @@ const projects = {
 
     images: [
       "/images/hendi.png",
-      "/images/hendi.png",
-      "/images/hendi.png",
+      "/images/hendi2.png",
+      "/images/hendi3.png",
     ],
   },
 };
@@ -62,47 +63,79 @@ export default async function ProjectDetail({
   }
 
   return (
-    <main className="max-w-6xl mx-auto px-6 py-20">
+    <main className="min-h-screen bg-slate-50 flex items-center">
 
-      <Link
-        href="/#projects"
-        className="text-sky-600 hover:underline"
-      >
-        ← Kembali
-      </Link>
+      <div className="max-w-6xl mx-auto px-6 w-full">
 
-      <div className="grid md:grid-cols-2 gap-12 mt-10">
+        {/* Back */}
+        <Link
+          href="/#projects"
+          className="inline-flex items-center gap-2 text-sky-600 font-medium hover:gap-3 transition-all mb-8"
+        >
+          ← Back to Projects
+        </Link>
 
-        {/* Kiri */}
-        <div>
-          <h1 className="text-4xl font-bold text-[#0F172A] mb-6">
-            {project.title}
-          </h1>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-          <p className="text-slate-600 leading-relaxed mb-8">
-            {project.description}
-          </p>
+          {/* LEFT */}
+          <div>
 
-          <h2 className="text-2xl font-semibold mb-4">
-            Teknologi
-          </h2>
+            <span className="inline-block bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
+              Featured Project
+            </span>
 
-          <ul className="space-y-2">
-            {project.tech.map((item) => (
-              <li key={item}>• {item}</li>
-            ))}
-          </ul>
-        </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-[#0F172A] leading-tight mb-5">
+              {project.title}
+            </h1>
 
-        {/* Kanan */}
-        <div>
-          <ProjectGallery
-            images={project.images}
-            title={project.title}
-          />
+            <p className="text-slate-600 leading-8 text-[16px] mb-8">
+              {project.description}
+            </p>
+
+            <h2 className="text-xl font-bold text-[#0F172A] mb-4">
+              Technologies Used
+            </h2>
+
+            <div className="flex flex-wrap gap-3">
+
+              {project.tech.map((item) => (
+                <span
+                  key={item}
+                  className="
+                    px-4 py-2
+                    rounded-full
+                    bg-sky-100
+                    text-sky-700
+                    font-medium
+                    text-sm
+                    hover:bg-sky-200
+                    hover:scale-105
+                    transition
+                    cursor-default
+                  "
+                >
+                  {item}
+                </span>
+              ))}
+
+            </div>
+
+          </div>
+
+          {/* RIGHT */}
+          <div>
+
+            <ProjectGallery
+              images={project.images}
+              title={project.title}
+            />
+
+          </div>
+
         </div>
 
       </div>
+
     </main>
   );
 }
